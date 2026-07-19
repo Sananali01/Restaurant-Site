@@ -1,0 +1,157 @@
+.hero {
+  padding: 70px 0 10px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 4.4vw, 46px);
+  margin-top: 12px;
+}
+
+.hero p {
+  margin: 16px auto 0;
+  max-width: 480px;
+}
+
+.section { padding-top: 40px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.formCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  font-size: 14px;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.error {
+  color: var(--color-danger);
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.success {
+  text-align: center;
+  padding: 30px 10px;
+}
+
+.successIcon {
+  font-size: 48px;
+  color: var(--color-success);
+}
+
+.success h3 {
+  margin-top: 16px;
+  font-size: 24px;
+}
+
+.success p {
+  margin: 14px auto 24px;
+  max-width: 380px;
+}
+
+.info img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.infoCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 26px;
+  margin-top: 20px;
+}
+
+.infoCard h4 {
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.infoCard ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.infoCard li {
+  font-size: 13.5px;
+  color: var(--color-text-soft);
+  padding-left: 16px;
+  position: relative;
+}
+
+.infoCard li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+@media (max-width: 980px) {
+  .grid { grid-template-columns: 1fr; }
+  .info { order: -1; }
+}
+
+@media (max-width: 560px) {
+  .formCard { padding: 26px 20px; }
+  .row2 { grid-template-columns: 1fr; }
+}

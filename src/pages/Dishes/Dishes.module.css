@@ -1,0 +1,133 @@
+.hero {
+  padding: 70px 0 10px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 4.4vw, 46px);
+  margin-top: 12px;
+}
+
+.hero p {
+  margin: 16px auto 0;
+  max-width: 480px;
+}
+
+.section { padding-top: 40px; }
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  margin-bottom: 20px;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-bg);
+  border-radius: 100px;
+  padding: 9px 16px;
+  flex: 1;
+  min-width: 200px;
+  color: var(--color-text-soft);
+}
+
+.searchBox input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  flex: 1;
+  color: var(--color-text);
+}
+
+.select {
+  padding: 10px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--color-border);
+  font-size: 13.5px;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+}
+
+.priceLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12.5px;
+  color: var(--color-text-soft);
+  font-family: var(--font-button);
+}
+
+.priceLabel input {
+  accent-color: var(--color-primary);
+  width: 130px;
+}
+
+.toggles {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.toggle input {
+  accent-color: var(--color-primary);
+}
+
+.reset {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.count {
+  font-size: 13px;
+  color: var(--color-text-soft);
+  margin-bottom: 22px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+@media (max-width: 1080px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .toolbar { flex-direction: column; align-items: stretch; }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}

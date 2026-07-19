@@ -1,0 +1,76 @@
+.section {
+  padding: 90px 0;
+}
+
+.card {
+  max-width: 520px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 52px 40px;
+  text-align: center;
+}
+
+.iconWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(22,163,74,0.1);
+  color: var(--color-success);
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.card h1 {
+  font-size: 28px;
+  margin-top: 22px;
+}
+
+.card p {
+  margin-top: 10px;
+}
+
+.details {
+  margin-top: 30px;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.details > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+}
+
+.label {
+  color: var(--color-text-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.value {
+  font-weight: 600;
+  color: var(--color-text);
+  font-family: var(--font-button);
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 560px) {
+  .card { padding: 40px 24px; }
+}

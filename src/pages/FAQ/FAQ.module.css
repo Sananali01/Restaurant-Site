@@ -1,0 +1,20 @@
+.hero {
+  padding: 70px 0 10px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 4.4vw, 46px);
+  margin-top: 12px;
+}
+
+.hero p {
+  margin: 16px auto 0;
+  max-width: 480px;
+}
+
+.section { padding-top: 40px; }
+
+.wrap {
+  max-width: 760px;
+}

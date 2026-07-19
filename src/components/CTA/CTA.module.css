@@ -1,0 +1,59 @@
+.section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.panel {
+  position: relative;
+  background: #23150A;
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(212,175,55,0.18), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(201,123,60,0.22), transparent 45%);
+  border-radius: var(--radius-lg);
+  padding: 80px 40px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.eyebrow {
+  font-family: var(--font-button);
+  font-size: 12.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.panel h2 {
+  color: #fff;
+  font-size: clamp(28px, 4vw, 44px);
+  margin-top: 14px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.panel p {
+  color: rgba(255,255,255,0.65);
+  max-width: 480px;
+  margin: 16px auto 0;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.outlineOnDark {
+  color: #fff;
+  border-color: rgba(255,255,255,0.4);
+}
+
+.outlineOnDark:hover {
+  background: #fff;
+  color: var(--color-primary);
+}
