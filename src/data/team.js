@@ -95,19 +95,27 @@ export const blogPosts = [
   { id: 'b6', title: 'Chef Hana on Growing Up in an Osaka Kitchen', category: 'Chef Stories', excerpt: 'A conversation about family recipes, discipline, and why umami is never an accident.', date: 'Mar 30, 2026', image: 'https://picsum.photos/seed/embers-blog-chef/700/460' },
 ];
 
+import main from "../assets/main.png"
+import main2 from "../assets/Gallery/main2.png"
+import Interior1 from "../assets/Gallery/Interior 1.png"
+import Interior from "../assets/Gallery/Interior 2.png"
+import Kitchen from "../assets/Gallery/Kitchen.png"
+import Kitchen1 from "../assets/Gallery/Kitchen.png"
+
+
 export const galleryImages = [
-  { id: 'g1', category: 'Restaurant', image: 'https://picsum.photos/seed/embers-g-restaurant/700/900' },
+  { id: 'g1', category: 'Restaurant', image: main },
   { id: 'g2', category: 'Food', image: 'https://picsum.photos/seed/embers-g-food1/700/560' },
-  { id: 'g3', category: 'Kitchen', image: 'https://picsum.photos/seed/embers-g-kitchen/700/700' },
+  { id: 'g3', category: 'Kitchen', image: Kitchen},
   { id: 'g4', category: 'Events', image: 'https://picsum.photos/seed/embers-g-events/700/900' },
-  { id: 'g5', category: 'Interior', image: 'https://picsum.photos/seed/embers-g-interior1/700/560' },
+  { id: 'g5', category: 'Interior', image: Interior },
   { id: 'g6', category: 'Chef', image: 'https://picsum.photos/seed/embers-g-chef/700/900' },
   { id: 'g7', category: 'Outdoor Dining', image: 'https://picsum.photos/seed/embers-g-outdoor/700/560' },
   { id: 'g8', category: 'Private Rooms', image: 'https://picsum.photos/seed/embers-g-private/700/900' },
   { id: 'g9', category: 'Food', image: 'https://picsum.photos/seed/embers-g-food2/700/700' },
-  { id: 'g10', category: 'Interior', image: 'https://picsum.photos/seed/embers-g-interior2/700/560' },
-  { id: 'g11', category: 'Restaurant', image: 'https://picsum.photos/seed/embers-g-restaurant2/700/900' },
-  { id: 'g12', category: 'Kitchen', image: 'https://picsum.photos/seed/embers-g-kitchen2/700/560' },
+  { id: 'g10', category: 'Interior', image: Interior1},
+  { id: 'g11', category: 'Restaurant', image: main2 },
+  { id: 'g12', category: 'Kitchen', image: Kitchen1 },
 ];
 
 export const faqs = [
