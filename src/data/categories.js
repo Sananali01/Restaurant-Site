@@ -6,7 +6,7 @@ export const categories = [
   { id: 'healthy', name: 'Healthy Food', tagline: 'Light, fresh, balanced', image: 'https://picsum.photos/seed/embers-healthy/600/500' },
   { id: 'italian', name: 'Italian', tagline: 'Pasta, pizza & more', image: 'https://picsum.photos/seed/embers-italian/600/500' },
   { id: 'chinese', name: 'Chinese', tagline: 'Wok-fired favorites', image: 'https://picsum.photos/seed/embers-chinese/600/500' },
-  { id: 'indian', name: 'Indian', tagline: 'Bold spice, slow cooked', image: 'https://picsum.photos/seed/embers-indian/600/500' },
+  { id: 'desi', name: 'Desi', tagline: 'Bold spice, slow cooked', image: 'https://picsum.photos/seed/embers-indian/600/500' },
   { id: 'japanese', name: 'Japanese', tagline: 'Precision & umami', image: 'https://picsum.photos/seed/embers-japanese/600/500' },
   { id: 'mexican', name: 'Mexican', tagline: 'Bright & fiery', image: 'https://picsum.photos/seed/embers-mexican/600/500' },
   { id: 'seafood', name: 'Seafood', tagline: 'From ocean to plate', image: 'https://picsum.photos/seed/embers-seafood/600/500' },
@@ -19,6 +19,6 @@ export const categories = [
 export const menuCategories = [
   'Breakfast', 'Lunch', 'Dinner', 'Starters', 'Soups', 'Salads', 'Pizza', 'Burger',
   'Pasta', 'Steaks', 'BBQ', 'Seafood', 'Asian', 'Chinese', 'Italian', 'Mexican',
-  'Indian', 'Japanese', 'Desserts', 'Ice Cream', 'Coffee', 'Tea', 'Milkshakes',
+  'Desi', 'Japanese', 'Desserts', 'Ice Cream', 'Coffee', 'Tea', 'Milkshakes',
   'Fresh Juices', 'Soft Drinks', 'Mocktails', 'Cocktails',
 ];

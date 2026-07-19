@@ -6,6 +6,7 @@ import Statistics from '../../components/Statistics/Statistics.jsx';
 import CTA from '../../components/CTA/CTA.jsx';
 import { chefs } from '../../data/team.js';
 import styles from './About.module.css';
+import main from '../../assets/main.png'
 
 const VALUES = [
   { icon: FiTarget, title: 'Precision', text: 'Every dish is measured, timed, and plated with the same discipline, service after service.' },
@@ -41,7 +42,7 @@ export default function About() {
       <section className={`section ${styles.storySection}`}>
         <div className={`container ${styles.storyGrid}`}>
           <motion.img
-            src="https://picsum.photos/seed/embers-about-interior/700/560"
+            src={main}
             alt="Embers dining room interior"
             className={styles.storyImg}
             initial={{ opacity: 0, y: 20 }}

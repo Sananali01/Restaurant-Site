@@ -15,6 +15,10 @@ import { categories } from '../../data/categories.js';
 import { chefs, testimonials, galleryImages } from '../../data/team.js';
 import styles from './Home.module.css';
 
+import Biryani from '../../assets/Biryani.jpg'
+import Biryani2 from '../../assets/Biryani 2.jpg'
+import home from '../../assets/home.jpg'
+
 const featured = dishes.slice(0, 8);
 const instaImages = galleryImages.slice(0, 6);
 
@@ -60,9 +64,9 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <img src="https://picsum.photos/seed/embers-hero-main/620/720" alt="Signature plate at Embers" className={styles.heroImgMain} />
+            <img src={Biryani} alt="Signature plate at Embers" className={styles.heroImgMain} />
             <motion.img
-              src="https://picsum.photos/seed/embers-hero-side/300/300"
+              src={Biryani2}
               alt="Chef finishing a dish"
               className={styles.heroImgFloat}
               animate={{ y: [0, -14, 0] }}
@@ -81,7 +85,7 @@ export default function Home() {
       <section className={`section ${styles.story}`}>
         <div className={`container ${styles.storyGrid}`}>
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.6 }}>
-            <img src="https://picsum.photos/seed/embers-story/640/520" alt="Embers dining room" className={styles.storyImg} />
+            <img src={home} alt="Embers dining room" className={styles.storyImg} />
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.4 }} transition={{ duration: 0.6 }}>
             <span className="eyebrow">Our Story</span>
