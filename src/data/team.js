@@ -100,19 +100,26 @@ import main2 from "../assets/Gallery/main2.png"
 import Interior1 from "../assets/Gallery/Interior 1.png"
 import Interior from "../assets/Gallery/Interior 2.png"
 import Kitchen from "../assets/Gallery/Kitchen.png"
-import Kitchen1 from "../assets/Gallery/Kitchen.png"
+import Kitchen1 from "../assets/Gallery/Kitchen1.png"
+import Food from "../assets/Dishes/BBQ Chicken.jpg"
+import Food1 from "../assets/Dishes/Sushi Platter.jpg"
+import Event from "../assets/Gallery/Event.png"
+import Chef from "../assets/Chef/Wei Zhang.jpg"
+import Outdoor from "../assets/Gallery/Outdoor.png"
+import Private from "../assets/Gallery/Private.png"
+
 
 
 export const galleryImages = [
   { id: 'g1', category: 'Restaurant', image: main },
-  { id: 'g2', category: 'Food', image: 'https://picsum.photos/seed/embers-g-food1/700/560' },
+  { id: 'g2', category: 'Food', image: Food1},
   { id: 'g3', category: 'Kitchen', image: Kitchen},
-  { id: 'g4', category: 'Events', image: 'https://picsum.photos/seed/embers-g-events/700/900' },
+  { id: 'g4', category: 'Events', image: Event },
   { id: 'g5', category: 'Interior', image: Interior },
-  { id: 'g6', category: 'Chef', image: 'https://picsum.photos/seed/embers-g-chef/700/900' },
-  { id: 'g7', category: 'Outdoor Dining', image: 'https://picsum.photos/seed/embers-g-outdoor/700/560' },
-  { id: 'g8', category: 'Private Rooms', image: 'https://picsum.photos/seed/embers-g-private/700/900' },
-  { id: 'g9', category: 'Food', image: 'https://picsum.photos/seed/embers-g-food2/700/700' },
+  { id: 'g6', category: 'Chef', image: Chef },
+  { id: 'g7', category: 'Outdoor Dining', image: Outdoor },
+  { id: 'g8', category: 'Private Rooms', image: Private },
+  { id: 'g9', category: 'Food', image: Food},
   { id: 'g10', category: 'Interior', image: Interior1},
   { id: 'g11', category: 'Restaurant', image: main2 },
   { id: 'g12', category: 'Kitchen', image: Kitchen1 },
