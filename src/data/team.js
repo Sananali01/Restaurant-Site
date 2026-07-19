@@ -1,3 +1,10 @@
+import marcoAlvarez from "../assets/Chef/Marco Alvarez.jpg";
+import hanaKobayashi from "../assets/Chef/Hana Kobayashi.jpg";
+import eliseFontaine from "../assets/Chef/Elise Fontaine.jpg";
+import jamalCarter from "../assets/Chef/Jamal Carter.jpg";
+import giuliaRomano from "../assets/Chef/Giulia Romano.jpg";
+import weiZhang from "../assets/Chef/Wei Zhang.jpg";
+
 export const chefs = [
   {
     id: 'chef-1',
@@ -7,7 +14,7 @@ export const chefs = [
     experience: '18 years',
     awards: ['Michelin Recommended 2023', 'Golden Toque 2021'],
     bio: 'Marco leads the kitchen with a philosophy of restraint — a handful of ingredients, treated with total precision.',
-    image: 'https://picsum.photos/seed/embers-chef-marco/480/560',
+    image: marcoAlvarez,
   },
   {
     id: 'chef-2',
@@ -17,7 +24,7 @@ export const chefs = [
     experience: '11 years',
     awards: ['Rising Talent Award 2022'],
     bio: 'Hana trained in Osaka before bringing her precision knife-work and umami-forward style to Embers.',
-    image: 'https://picsum.photos/seed/embers-chef-hana/480/560',
+    image: hanaKobayashi,
   },
   {
     id: 'chef-3',
@@ -27,7 +34,7 @@ export const chefs = [
     experience: '14 years',
     awards: ['World Pastry Cup Finalist 2020'],
     bio: 'Elise treats dessert as architecture — structured, seasonal, and never overly sweet.',
-    image: 'https://picsum.photos/seed/embers-chef-elise/480/560',
+    image: eliseFontaine,
   },
   {
     id: 'chef-4',
@@ -37,7 +44,7 @@ export const chefs = [
     experience: '16 years',
     awards: ['Pitmaster Circuit Champion 2019'],
     bio: 'Jamal runs the fire pit like a science lab — every cut gets its own wood, timing, and rest.',
-    image: 'https://picsum.photos/seed/embers-chef-jamal/480/560',
+    image: jamalCarter,
   },
   {
     id: 'chef-5',
@@ -47,7 +54,7 @@ export const chefs = [
     experience: '13 years',
     awards: ['Slow Food Ambassador 2022'],
     bio: 'Giulia makes pasta fresh every morning, drawing on recipes passed down through four generations.',
-    image: 'https://picsum.photos/seed/embers-chef-giulia/480/560',
+    image: giuliaRomano,
   },
   {
     id: 'chef-6',
@@ -57,10 +64,9 @@ export const chefs = [
     experience: '15 years',
     awards: ['Wok Master Guild 2021'],
     bio: 'Wei brings wok-hei intensity to every stir-fry, balancing heat, timing, and seasoning by instinct.',
-    image: 'https://picsum.photos/seed/embers-chef-wei/480/560',
+    image: weiZhang,
   },
 ];
-
 export const testimonials = [
   { id: 't1', name: 'Sarah Whitfield', rating: 5, text: 'Every course felt intentional — the steak was the best I\u2019ve had this year, and the service matched the food.', role: 'Google Review' },
   { id: 't2', name: 'David Chen', rating: 5, text: 'The tasting menu was a genuine surprise from start to finish. Reservation process was effortless too.', role: 'Google Review' },
