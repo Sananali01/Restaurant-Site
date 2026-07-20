@@ -1,20 +1,35 @@
-import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { motion } from 'framer-motion';
-import { FiMapPin, FiPhone, FiMail, FiClock, FiCheckCircle } from 'react-icons/fi';
-import FAQAccordion from '../../components/FAQAccordion/FAQAccordion.jsx';
-import { faqs } from '../../data/team.js';
-import styles from './Contact.module.css';
+import { useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
+import {
+  FiMapPin,
+  FiPhone,
+  FiMail,
+  FiClock,
+  FiCheckCircle,
+} from "react-icons/fi";
+import FAQAccordion from "../../components/FAQAccordion/FAQAccordion.jsx";
+import { faqs } from "../../data/team.js";
+import styles from "./Contact.module.css";
 
 const INFO = [
-  { icon: FiMapPin, title: 'Address', text: '128 Hearth Lane, Downtown District' },
-  { icon: FiPhone, title: 'Phone', text: '+1 (555) 214-7890' },
-  { icon: FiMail, title: 'Email', text: 'hello@embersrestaurant.com' },
-  { icon: FiClock, title: 'Hours', text: 'Mon–Sun, 11:00 AM – 11:00 PM' },
+  {
+    icon: FiMapPin,
+    title: "Address",
+    text: "MM Alam Road, Gulberg III, Lahore, Pakistan",
+  },
+  { icon: FiPhone, title: "Phone", text: "+92 300 1234567" },
+  { icon: FiMail, title: "Email", text: "hello@embersrestaurant.pk" },
+  { icon: FiClock, title: "Hours", text: "Mon–Sun, 12:00 PM – 11:30 PM" },
 ];
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const [sent, setSent] = useState(false);
 
   const update = (k, v) => setForm((f) => ({ ...f, [k]: v }));
@@ -23,14 +38,17 @@ export default function Contact() {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
     setSent(true);
-    setForm({ name: '', email: '', subject: '', message: '' });
+    setForm({ name: "", email: "", subject: "", message: "" });
   };
 
   return (
     <>
       <Helmet>
         <title>Contact — Embers</title>
-        <meta name="description" content="Get in touch with Embers — address, phone, email, and a contact form." />
+        <meta
+          name="description"
+          content="Get in touch with Embers — address, phone, email, and a contact form."
+        />
       </Helmet>
 
       <section className={styles.hero}>
@@ -68,8 +86,8 @@ export default function Contact() {
               transition={{ duration: 0.5 }}
             >
               <iframe
-                title="Embers location map"
-                src="https://www.google.com/maps?q=New%20York%2C%20NY&output=embed"
+                title="Embers Restaurant Location"
+                src="https://www.google.com/maps?q=MM%20Alam%20Road%2C%20Gulberg%20III%2C%20Lahore%2C%20Pakistan&output=embed"
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
@@ -94,22 +112,45 @@ export default function Contact() {
                   <div className={styles.row2}>
                     <div className={styles.field}>
                       <label htmlFor="c-name">Name</label>
-                      <input id="c-name" value={form.name} onChange={(e) => update('name', e.target.value)} required />
+                      <input
+                        id="c-name"
+                        value={form.name}
+                        onChange={(e) => update("name", e.target.value)}
+                        required
+                      />
                     </div>
                     <div className={styles.field}>
                       <label htmlFor="c-email">Email</label>
-                      <input id="c-email" type="email" value={form.email} onChange={(e) => update('email', e.target.value)} required />
+                      <input
+                        id="c-email"
+                        type="email"
+                        value={form.email}
+                        onChange={(e) => update("email", e.target.value)}
+                        required
+                      />
                     </div>
                   </div>
                   <div className={styles.field}>
                     <label htmlFor="c-subject">Subject</label>
-                    <input id="c-subject" value={form.subject} onChange={(e) => update('subject', e.target.value)} />
+                    <input
+                      id="c-subject"
+                      value={form.subject}
+                      onChange={(e) => update("subject", e.target.value)}
+                    />
                   </div>
                   <div className={styles.field}>
                     <label htmlFor="c-message">Message</label>
-                    <textarea id="c-message" rows={5} value={form.message} onChange={(e) => update('message', e.target.value)} required />
+                    <textarea
+                      id="c-message"
+                      rows={5}
+                      value={form.message}
+                      onChange={(e) => update("message", e.target.value)}
+                      required
+                    />
                   </div>
-                  <button type="submit" className="btn btn-primary">Send Message</button>
+                  <button type="submit" className="btn btn-primary">
+                    Send Message
+                  </button>
                 </form>
               )}
             </motion.div>

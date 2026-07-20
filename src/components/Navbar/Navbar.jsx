@@ -14,7 +14,6 @@ const LINKS = [
   { to: '/categories', label: 'Categories' },
   { to: '/chefs', label: 'Chefs' },
   { to: '/gallery', label: 'Gallery' },
-  { to: '/reservation', label: 'Reservation' },
   { to: '/contact', label: 'Contact' },
 ];
 

@@ -151,7 +151,6 @@ ul {
   letter-spacing: 0.02em;
   padding: 15px 30px;
   border-radius: 100px;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -204,4 +203,16 @@ ul {
 
 .skip-link:focus {
   left: 0;
+}
+
+
+
+@media (a-width:1081px){
+
+ 
+
+  .btn{
+    display: contents;
+  }
+
 }
