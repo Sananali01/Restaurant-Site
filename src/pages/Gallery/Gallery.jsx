@@ -9,11 +9,24 @@ export default function Gallery() {
   const [filter, setFilter] = useState('All');
   const [lightbox, setLightbox] = useState(null);
 
-  const categories = useMemo(() => ['All', ...new Set(galleryImages.map((g) => g.category))], []);
-  const filtered = useMemo(
-    () => (filter === 'All' ? galleryImages : galleryImages.filter((g) => g.category === filter)),
-    [filter]
-  );
+  // Normalize category strings to prevent space/case mismatch bugs
+  const categories = useMemo(() => {
+    const rawCategories = galleryImages.map((g) => g.category.trim());
+    return ['All', ...new Set(rawCategories)];
+  }, []);
+
+  const filtered = useMemo(() => {
+    if (filter === 'All') return galleryImages;
+    return galleryImages.filter(
+      (g) => g.category.trim().toLowerCase() === filter.trim().toLowerCase()
+    );
+  }, [filter]);
+
+  // Reset lightbox if active filter changes
+  const handleFilterChange = (category) => {
+    setFilter(category);
+    setLightbox(null);
+  };
 
   const openAt = (index) => setLightbox(index);
   const close = () => setLightbox(null);
@@ -24,7 +37,10 @@ export default function Gallery() {
     <>
       <Helmet>
         <title>Gallery — Embers</title>
-        <meta name="description" content="A photo tour of the Embers dining room, kitchen, events, and private rooms." />
+        <meta
+          name="description"
+          content="A photo tour of the Embers dining room, kitchen, events, and private rooms."
+        />
       </Helmet>
 
       <section className={styles.hero}>
@@ -37,38 +53,44 @@ export default function Gallery() {
 
       <section className={`section ${styles.section}`}>
         <div className="container">
+          {/* Category Tabs */}
           <div className={styles.tabs}>
             {categories.map((c) => (
               <button
                 key={c}
                 className={`${styles.tab} ${filter === c ? styles.tabActive : ''}`}
-                onClick={() => setFilter(c)}
+                onClick={() => handleFilterChange(c)}
               >
                 {c}
               </button>
             ))}
           </div>
 
-          <div className={styles.masonry}>
-            {filtered.map((g, i) => (
-              <motion.button
-                key={g.id}
-                className={styles.tile}
-                onClick={() => openAt(i)}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.4, delay: (i % 8) * 0.04 }}
-                aria-label={`View ${g.category} photo`}
-              >
-                <img src={g.image} alt={g.category} loading="lazy" />
-                <span className={styles.tileLabel}>{g.category}</span>
-              </motion.button>
-            ))}
-          </div>
+          {/* Gallery Grid with Smooth Layout Transitions */}
+          <motion.div layout className={styles.masonry}>
+            <AnimatePresence mode="popLayout">
+              {filtered.map((g, i) => (
+                <motion.button
+                  layout
+                  key={`${g.id}-${i}`} // Fallback uniqueness to guarantee no key collisions
+                  className={styles.tile}
+                  onClick={() => openAt(i)}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  aria-label={`View ${g.category} photo`}
+                >
+                  <img src={g.image} alt={g.category} loading="lazy" />
+                  <span className={styles.tileLabel}>{g.category}</span>
+                </motion.button>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </section>
 
+      {/* Lightbox Modal */}
       <AnimatePresence>
         {lightbox !== null && filtered[lightbox] && (
           <motion.div
@@ -78,10 +100,22 @@ export default function Gallery() {
             exit={{ opacity: 0 }}
             onClick={close}
           >
-            <button className={styles.close} onClick={close} aria-label="Close"><FiX /></button>
-            <button className={styles.navBtn} style={{ left: 24 }} onClick={(e) => { e.stopPropagation(); prev(); }} aria-label="Previous image"><FiChevronLeft /></button>
+            <button className={styles.close} onClick={close} aria-label="Close">
+              <FiX />
+            </button>
+            <button
+              className={styles.navBtn}
+              style={{ left: 24 }}
+              onClick={(e) => {
+                e.stopPropagation();
+                prev();
+              }}
+              aria-label="Previous image"
+            >
+              <FiChevronLeft />
+            </button>
             <motion.img
-              key={filtered[lightbox].id}
+              key={filtered[lightbox].id || lightbox}
               src={filtered[lightbox].image}
               alt={filtered[lightbox].category}
               className={styles.lightboxImg}
@@ -90,7 +124,17 @@ export default function Gallery() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.3 }}
             />
-            <button className={styles.navBtn} style={{ right: 24 }} onClick={(e) => { e.stopPropagation(); next(); }} aria-label="Next image"><FiChevronRight /></button>
+            <button
+              className={styles.navBtn}
+              style={{ right: 24 }}
+              onClick={(e) => {
+                e.stopPropagation();
+                next();
+              }}
+              aria-label="Next image"
+            >
+              <FiChevronRight />
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
